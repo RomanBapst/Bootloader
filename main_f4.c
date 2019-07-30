@@ -673,7 +673,7 @@ led_on(unsigned led)
 		break;
 
 	case LED_BOOTLOADER:
-		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
+		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
 		break;
 	}
 }
@@ -687,7 +687,7 @@ led_off(unsigned led)
 		break;
 
 	case LED_BOOTLOADER:
-		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
+		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
 		break;
 	}
 }
@@ -743,6 +743,8 @@ main(void)
 	 * Check the force-bootloader register; if we find the signature there, don't
 	 * try booting.
 	 */
+
+
 	if (board_get_rtc_signature() == BOOT_RTC_SIGNATURE) {
 
 		/*

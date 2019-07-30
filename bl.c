@@ -499,6 +499,7 @@ bootloader(unsigned timeout)
 	systick_interrupt_enable();
 	systick_counter_enable();
 
+
 	/* if we are working with a timeout, start it running */
 	if (timeout) {
 		timer[TIMER_BL_WAIT] = timeout;

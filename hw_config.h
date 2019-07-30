@@ -494,6 +494,39 @@
 # define BOARD_LED_OFF                  gpio_clear
 
 /****************************************************************************
+ * TARGET_HW_MYXA
+ ****************************************************************************/
+
+#elif  defined(TARGET_HW_MYXA)
+
+# define APP_LOAD_ADDRESS               0x0800C000
+# define BOOTLOADER_DELAY               5000
+# define BOARD_MYXA
+# define INTERFACE_USB                  1
+# define INTERFACE_USART                0
+# define USBDEVICESTRING                "PX4 BL MYXA"
+# define USBPRODUCTID                   0x0001
+
+# define BOARD_FIRST_FLASH_SECTOR_TO_ERASE	2
+# define APP_RESERVATION_SIZE			(2 * 16 * 1024) /* 1 16 Kib Sectors */
+
+# define BOARD_USB_VBUS_SENSE_DISABLED
+
+# define BOARD_TYPE                     99
+# define BOARD_FLASH_SECTORS            7
+# define BOARD_FLASH_SIZE               (512 * 1024)
+
+# define OSC_FREQ                       8
+
+# define BOARD_PIN_LED_ACTIVITY         0
+# define BOARD_PIN_LED_BOOTLOADER       GPIO8
+# define BOARD_PORT_LEDS                GPIOC
+# define BOARD_CLOCK_LEDS               RCC_AHB1ENR_GPIOCEN
+# define BOARD_LED_ON                   gpio_set
+# define BOARD_LED_OFF                  gpio_clear
+
+
+/****************************************************************************
  * TARGET_HW_PX4_PIO_V1 or TARGET_HW_PX4_PIO_V2
  ****************************************************************************/
 

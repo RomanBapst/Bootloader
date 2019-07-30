@@ -74,7 +74,8 @@ TARGETS	= \
 	px4io_bl \
 	px4iov3_bl \
 	tapv1_bl \
-	smartap_pro_bl
+	smartap_pro_bl \
+	myxa_bl
 
 all:	$(TARGETS) sizes
 
@@ -119,6 +120,9 @@ mindpxv2_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 
 px4discovery_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	${MAKE} ${MKFLAGS} -f  Makefile.f4 TARGET_HW=PX4_DISCOVERY_V1  LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
+
+px4myxa_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
+	${MAKE} ${MKFLAGS} -f  Makefile.f4 TARGET_HW=MYXA  LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
 
 px4flow_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	${MAKE} ${MKFLAGS} -f  Makefile.f4 TARGET_HW=PX4_FLOW_V1  LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
